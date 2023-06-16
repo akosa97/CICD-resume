@@ -10,10 +10,10 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'sudo apt update'
-                sh 'sudo apt install -y apache2'
-                sh 'sudo cp -R /var/lib/jenkins/workspace/resume/* /var/www/html/'
-                sh 'sudo service apache2 restart'
+                sh 'apt update'
+                sh 'apt install -y apache2'
+                sh 'cp -R /var/lib/jenkins/workspace/resume/* /var/www/html/'
+                sh 'systemctl restart apache2'
             }
         }
     }
