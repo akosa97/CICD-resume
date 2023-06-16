@@ -23,3 +23,6 @@ pipeline {
         sh 'mkdir -p public_html'
         sh 'cp -R build/* public_html/'
       }
+    }
+  }
+}
