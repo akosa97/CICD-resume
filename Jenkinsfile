@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/akosa97/CICD-resume.git'
+                git branch: 'main', url: 'https://github.com/cloudsecakosa/CICD-webapp-portfolio.git'
             }
         }
         
