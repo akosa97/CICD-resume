@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy the resume file to the web server
-                sh 'cp -R /var/lib/jenkins/workspace/CICDresume/resume /var/www/html/'
+                sh 'cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/'
             }
         }
     }
