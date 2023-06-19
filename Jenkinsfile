@@ -17,23 +17,24 @@ pipeline {
     
     stage('Deploy') {
       environment {
-        DOCKER_IMAGE = 'ubuntu:latest'
+        DOCKER_IMAGE = 'ubuntu:22.04.2'
+        CONTAINER_ID = 'a745d63f685413cc39e792a77ae48014dc16f93fbd574873ccb603c5234b68cb'
       }
       steps {
         script {
           docker.withRegistry('', '') {
-            def deployContainer = docker.image(DOCKER_IMAGE).run('-v $(pwd)/build:/var/www/public_html -p 80:80 -d')
+            def deployContainer = docker.image(DOCKER_IMAGE).run("-v $(pwd)/build:/var/www/public_html -p 8888:80 -d")
             def containerId = deployContainer.id
             
             // Copy resume.html to the container
-            sh "docker cp build/resume.html $containerId:/var/www/public_html/"
+            sh "docker cp build/resume.html $CONTAINER_ID:/var/www/public_html/"
             
             // Restart Apache in the container
-            sh "docker exec $containerId service apache2 restart"
+            sh "docker exec $CONTAINER_ID service apache2 restart"
             
             // Clean up the container
-            sh "docker stop $containerId"
-            sh "docker rm $containerId"
+            sh "docker stop $CONTAINER_ID"
+            sh "docker rm $CONTAINER_ID"
           }
         }
       }
