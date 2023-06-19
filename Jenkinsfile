@@ -4,7 +4,8 @@ pipeline {
         stage('Clone') {
             steps {
                 // Clone code from your GitHub repository
-                git clone: 'https://github.com/cloudsecakosa/CICD-resume.git'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], 
+                          userRemoteConfigs: [[url: 'https://github.com/cloudsecakosa/CICD-resume.git']]])
             }
         }
         stage('Deploy') {
