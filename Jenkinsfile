@@ -1,17 +1,18 @@
 pipeline {
     agent any
+
     stages {
-        stage('Clone') {
+        stage('Checkout') {
             steps {
-                // Clone code from your GitHub repository
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], 
-                          userRemoteConfigs: [[url: 'https://github.com/cloudsecakosa/CICD-resume.git']]])
+                // Clone the GitHub repository
+                git branch: 'main', url: 'https://github.com/cloudsecakosa/CICD-resume.git'
             }
         }
+
         stage('Deploy') {
             steps {
-                // Deploy the updated resume to your web server
-                sh 'cp -R /var/lib/jenkins/workspace/CICD-resume/Resume/* /var/www/html/'
+                // Deploy the resume file to the web server
+                sh 'cp -R /var/lib/jenkins/workspace/CICDresume/resume /var/www/html/'
             }
         }
     }
