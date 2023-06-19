@@ -23,7 +23,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('', '') {
-            def deployContainer = docker.image(DOCKER_IMAGE).run("-v $(pwd)/build:/var/www/public_html -p 8888:80 -d")
+            def deployContainer = docker.image(DOCKER_IMAGE).run("-v \$(pwd)/build:/var/www/public_html -p 8888:80 -d")
             def containerId = deployContainer.id
             
             // Copy resume.html to the container
