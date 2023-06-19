@@ -17,7 +17,7 @@ pipeline {
     
     stage('Deploy') {
       environment {
-        DOCKER_IMAGE = 'ubuntu:22.04.2'
+        DOCKER_IMAGE = 'ubuntu:22.04.2 LTS'
         CONTAINER_ID = 'a745d63f685413cc39e792a77ae48014dc16f93fbd574873ccb603c5234b68cb'
       }
       steps {
