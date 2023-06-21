@@ -44,4 +44,5 @@ Any subsequent commits I make to my GitHub repository will trigger the pipeline 
 
 By following these steps, I have successfully implemented a CI/CD pipeline using Jenkins to deploy my resume website. The pipeline allows for automated deployment whenever I make changes to my GitHub repository, providing a seamless and efficient workflow for managing and updating my resume.
 
-![Step 8, run the pipeline, deployment was successful](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/506f180d-d5f6-43ef-8ad1-640c3e42ccd6)
+![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/34628e84-8715-46b0-bf1a-e4f70521e402)
+
