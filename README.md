@@ -6,9 +6,18 @@ I uploaded the HTML file to my GitHub repository, allowing me to version control
 Step 2: Configuring Jenkins and Setting Up a Webhook
 
 I created an EC2 instance where I installed Jenkins and Docker.
+
+![Step 5, install jenkins   docker](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/436477cf-a95a-4e1c-8f66-950f715c5d80)
+
 I opened port 8080 on the EC2 instance to access Jenkins through a web browser.
+
+![step 6, open port 8080 and access jenkins using your EC2 IP](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/2dfacaaf-f2ed-4204-bd3a-ac08411c96db)
+
 I accessed the Jenkins dashboard and performed the initial setup, including installing necessary plugins and configuring basic security settings.
+
 I added a webhook to my GitHub repository, enabling Jenkins to receive notifications whenever I make a new commit.
+
+![Step 7, configure jenkins, add webhook, create pipeline](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/6825d512-ef9e-49d3-a201-2ce7be956d9b)
 
 Step 3: Writing my Pipeline Script
 
@@ -31,6 +40,8 @@ The pipeline executed the stages in sequence.
 In the "Deploy" stage, my resume file (resume.html) was successfully copied to the directory (/var/www/html/) on the web server.
 Any subsequent commits I make to my GitHub repository will trigger the pipeline to run again, automatically deploying the updated version of my resume.
 
-![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/1e9d9a4c-af37-4a3d-9e07-1302a4c15b5b)
+![Step 8, run the pipeline, deployment was successful](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/752e7cfd-cb63-4c3d-b417-10df07a030c0)
 
 By following these steps, I have successfully implemented a CI/CD pipeline using Jenkins to deploy my resume website. The pipeline allows for automated deployment whenever I make changes to my GitHub repository, providing a seamless and efficient workflow for managing and updating my resume.
+
+![Step 8, run the pipeline, deployment was successful](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/506f180d-d5f6-43ef-8ad1-640c3e42ccd6)
