@@ -2,12 +2,14 @@ Step 1: Creating and Uploading Resume HTML Template
 
 In this step, you developed your resume using an HTML template.
 You uploaded the HTML file to your GitHub repository, making it accessible for version control and collaboration.
+
 Step 2: Configuring Jenkins and Setting Up Webhook
 
 You created an EC2 instance where you installed Jenkins and Docker.
 Port 8080 was opened on the EC2 instance to allow access to Jenkins through the web browser.
 You accessed the Jenkins dashboard and performed the initial setup, including setting up the necessary plugins and configuring basic security settings.
 A webhook was added to your GitHub repository, which allows Jenkins to receive notifications whenever a new commit is made.
+
 Step 3: Writing the Pipeline Script
 
 The pipeline script is defined using the Jenkins declarative pipeline syntax.
@@ -21,6 +23,7 @@ The url parameter specifies the URL of the GitHub repository.
 The "Deploy" stage is responsible for deploying the resume file to the web server.
 Within the stage, the sh step executes a shell command.
 The command cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/ copies the resume.html file from the Jenkins workspace to the /var/www/html/ directory on the web server.
+
 Step 4: Running the Pipeline and Automatic Deployment
 
 After writing the pipeline script, you triggered the pipeline to run.
