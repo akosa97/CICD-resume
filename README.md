@@ -31,4 +31,6 @@ The pipeline executed the stages in sequence.
 In the "Deploy" stage, my resume file (resume.html) was successfully copied to the directory (/var/www/html/) on the web server.
 Any subsequent commits I make to my GitHub repository will trigger the pipeline to run again, automatically deploying the updated version of my resume.
 
+![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/1e9d9a4c-af37-4a3d-9e07-1302a4c15b5b)
+
 By following these steps, I have successfully implemented a CI/CD pipeline using Jenkins to deploy my resume website. The pipeline allows for automated deployment whenever I make changes to my GitHub repository, providing a seamless and efficient workflow for managing and updating my resume.
