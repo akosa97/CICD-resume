@@ -44,5 +44,32 @@ Any subsequent commits I make to my GitHub repository will trigger the pipeline 
 
 By following these steps, I have successfully implemented a CI/CD pipeline using Jenkins to deploy my resume website. The pipeline allows for automated deployment whenever I make changes to my GitHub repository, providing a seamless and efficient workflow for managing and updating my resume.
 
-![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/34628e84-8715-46b0-bf1a-e4f70521e402)
+![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/8f0259a0-e7f0-402f-83be-2ca3fe2c4b0f)
 
+
+Below I'm going to show how you would implement DevSecOps practices, creating a more secure web application.
+
+Static Code Analysis:
+
+Install and configure SonarQube server.
+Obtain a SonarQube token and replace my-sonarqube-token in the pipeline script with your token.
+Update the SonarQube server URL and project details accordingly.
+Run the pipeline to trigger static code analysis using SonarQube.
+
+Dynamic Application Security Testing (DAST):
+
+Install and configure OWASP ZAP.
+Replace http://your-application-url with the URL of your deployed application in the pipeline script.
+Run the pipeline to initiate DAST using OWASP ZAP.
+
+Container Scanning:
+
+Install and configure Clair.
+Replace clair-server:6060 with the URL of your Clair server in the pipeline script.
+Update your-container-image with the details of the container image you want to scan.
+Run the pipeline to perform container scanning using Clair.
+
+Infrastructure as Code (IaC) Security:
+
+Install and configure tfsec.
+Replace /path/to/your/iac/templates with the path to your IaC templates in the pipeline script
