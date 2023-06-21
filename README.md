@@ -1,33 +1,34 @@
-Step 1: Creating and Uploading Resume HTML Template
+Step 1: Creating and Uploading my Resume HTML Template
 
-In this step, you developed your resume using an HTML template.
-You uploaded the HTML file to your GitHub repository, making it accessible for version control and collaboration.
+I developed my resume using an HTML template.
+I uploaded the HTML file to my GitHub repository, allowing me to version control and collaborate on my resume.
 
-Step 2: Configuring Jenkins and Setting Up Webhook
+Step 2: Configuring Jenkins and Setting Up a Webhook
 
-You created an EC2 instance where you installed Jenkins and Docker.
-Port 8080 was opened on the EC2 instance to allow access to Jenkins through the web browser.
-You accessed the Jenkins dashboard and performed the initial setup, including setting up the necessary plugins and configuring basic security settings.
-A webhook was added to your GitHub repository, which allows Jenkins to receive notifications whenever a new commit is made.
+I created an EC2 instance where I installed Jenkins and Docker.
+I opened port 8080 on the EC2 instance to access Jenkins through a web browser.
+I accessed the Jenkins dashboard and performed the initial setup, including installing necessary plugins and configuring basic security settings.
+I added a webhook to my GitHub repository, enabling Jenkins to receive notifications whenever I make a new commit.
 
-Step 3: Writing the Pipeline Script
+Step 3: Writing my Pipeline Script
 
-The pipeline script is defined using the Jenkins declarative pipeline syntax.
-The pipeline block sets the overall configuration of the pipeline.
-The agent any directive specifies that the pipeline can run on any available agent (Jenkins worker node).
-The pipeline consists of two stages: "Checkout" and "Deploy".
-The "Checkout" stage is responsible for cloning the GitHub repository containing your resume code.
-Within the stage, the git step is used to clone the repository.
-The branch: 'main' parameter specifies the branch to be cloned.
-The url parameter specifies the URL of the GitHub repository.
-The "Deploy" stage is responsible for deploying the resume file to the web server.
-Within the stage, the sh step executes a shell command.
-The command cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/ copies the resume.html file from the Jenkins workspace to the /var/www/html/ directory on the web server.
+I defined my pipeline script using the Jenkins declarative pipeline syntax.
+In the pipeline block, I set the overall configuration of my pipeline.
+I specified agent any to allow the pipeline to run on any available Jenkins agent (worker node).
+My pipeline consisted of two stages: "Checkout" and "Deploy".
+In the "Checkout" stage, I cloned my GitHub repository containing my resume code.
+Within the stage, I used the git step to clone the repository.
+I specified the branch to be cloned as main.
+I provided the URL of my GitHub repository.
+In the "Deploy" stage, I deployed my resume file to the web server.
+Within the stage, I used the sh step to execute a shell command.
+I used the command cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/ to copy the resume.html file from my Jenkins workspace to the /var/www/html/ directory on the web server.
 
-Step 4: Running the Pipeline and Automatic Deployment
+Step 4: Running the Pipeline and Achieving Automatic Deployment
 
-After writing the pipeline script, you triggered the pipeline to run.
-The pipeline executed the defined stages sequentially.
-In the "Deploy" stage, the resume file (resume.html) was successfully copied to the web server's directory (/var/www/html/).
-Any subsequent commits made to the GitHub repository trigger the pipeline to run again, automatically deploying the updated resume.
-By following these steps, you have successfully implemented a CI/CD pipeline using Jenkins to deploy your resume website and achieved automated deployment whenever changes are made to the GitHub repository.
+After writing my pipeline script, I triggered the pipeline to run.
+The pipeline executed the stages in sequence.
+In the "Deploy" stage, my resume file (resume.html) was successfully copied to the directory (/var/www/html/) on the web server.
+Any subsequent commits I make to my GitHub repository will trigger the pipeline to run again, automatically deploying the updated version of my resume.
+
+By following these steps, I have successfully implemented a CI/CD pipeline using Jenkins to deploy my resume website. The pipeline allows for automated deployment whenever I make changes to my GitHub repository, providing a seamless and efficient workflow for managing and updating my resume.
