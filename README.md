@@ -47,6 +47,8 @@ By following these steps, I have successfully implemented a CI/CD pipeline using
 ![CICDresume](https://github.com/cloudsecakosa/CICD-resume/assets/91312467/8f0259a0-e7f0-402f-83be-2ca3fe2c4b0f)
 
 
+
+
 Below I'm going to show how you would implement DevSecOps practices, creating a more secure web application.
 
 Static Code Analysis:
