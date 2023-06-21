@@ -1,0 +1,72 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clone the GitHub repository
+                git branch: 'main', url: 'https://github.com/cloudsecakosa/CICD-resume.git'
+            }
+        }
+
+        stage('Static Code Analysis') {
+            steps {
+                // Run static code analysis using SonarQube
+                // Replace the placeholders with your SonarQube server details
+                sh 'sonar-scanner \
+                    -Dsonar.projectKey=my-project-key \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://sonarqube-server:9000 \
+                    -Dsonar.login=my-sonarqube-token'
+            }
+        }
+
+        stage('Dynamic Application Security Testing') {
+            steps {
+                // Run DAST using OWASP ZAP
+                // Replace the placeholders with your application details
+                sh 'zap-baseline.py \
+                    -t http://your-application-url \
+                    -g gen.conf \
+                    -r report.html'
+            }
+        }
+
+        stage('Container Scanning') {
+            steps {
+                // Run container scanning using Clair
+                // Replace the placeholders with your container image details
+                sh 'clair-scanner \
+                    --clair="http://clair-server:6060" \
+                    --ip "$(hostname -i)" \
+                    --report="clair-report.json" \
+                    your-container-image'
+            }
+        }
+
+        stage('Infrastructure as Code Security') {
+            steps {
+                // Run IaC security checks using tfsec
+                // Replace the placeholders with your IaC template details
+                sh 'tfsec /path/to/your/iac/templates'
+            }
+        }
+
+        stage('Security Test Automation') {
+            steps {
+                // Run security tests using OWASP ZAP
+                // Replace the placeholders with your application details
+                sh 'zap-full-scan.py \
+                    -t http://your-application-url \
+                    -r report.html'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy the resume file to the web server
+                sh 'cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/'
+            }
+        }
+    }
+}
