@@ -20,7 +20,7 @@ pipeline {
                 echo 'Testing...'
                 snykSecurity(
                     snykInstallation: 'cloudsecakosa', // Replace with your Snyk Installation Name
-                    snykTokenId: 'c7da9aa6-7af6-4b49-a9f1-c237d4a66ea3', // Replace with your Snyk API Token ID
+                    snykTokenId: 'cloudsecakosa', // Replace with your Snyk API Token ID
                     additionalArguments: '--all-projects --detection-depth=<DEPTH>'
                 )
             }
