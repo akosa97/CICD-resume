@@ -6,7 +6,13 @@ pipeline {
             steps {
                 // Clone the GitHub repository
                 git branch: 'main', url: 'https://github.com/cloudsecakosa/secureCICDresume.git'
-         
+            }
+        }
+
+        stage('Snyk Scan') {
+            steps {
+                // Run Snyk scan on resume.html
+                sh 'snyk test /var/lib/jenkins/workspace/secureCICDresume/resume.html'
             }
         }
 
