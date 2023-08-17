@@ -11,7 +11,7 @@ pipeline {
 
         stage('Snyk Scan') {
             steps {
-                // Run Snyk scan on resume.html
+                // Run Snyk scan on resume.html 
                 sh 'snyk test /var/lib/jenkins/workspace/secureCICDresume/resume.html'
             }
         }
