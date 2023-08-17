@@ -5,14 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git branch: 'main', url: 'https://github.com/cloudsecakosa/CICD-resume.git'
+                git branch: 'main', url: 'https://github.com/cloudsecakosa/secureCICDresume.git'
             }
         }
 
         stage('Deploy') {
             steps {
                 // Deploy the resume file to the web server
-                sh 'cp -R /var/lib/jenkins/workspace/CICDresume/resume.html /var/www/html/'
+                sh 'cp -R /var/lib/jenkins/workspace/secureCICDresume/resume.html /var/www/html/'
             }
         }
     }
