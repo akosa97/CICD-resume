@@ -9,6 +9,13 @@ pipeline {
             }
         }
 
+       stage('Snyk Scan') {
+           steps {
+               // Run Snyk scan using the Synk Jenkins plugin
+                  snykSecuritymonitor failOnIssues: true
+           }
+       }
+
         stage('Deploy') {
             steps {
                 // Create destination directory if it doesn't exist
