@@ -21,7 +21,7 @@ pipeline {
                 snykSecurity(
                     snykInstallation: 'cloudsecakosa', // Replace with your Snyk Installation Name
                     snykTokenId: 'cloudsecakosa', // Replace with your Snyk API Token ID
-                    additionalArguments: '--all-projects --detection-depth=8'
+                    additionalArguments: '--all-projects --detection-depth=6'
                 )
             }
         }
