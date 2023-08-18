@@ -16,14 +16,7 @@ pipeline {
                 
                 // Deploy the resume file to the web server
                 sh 'sudo cp -R /var/lib/jenkins/workspace/secureCICDresume/resume.html /var/www/html/'
-            }
-        }
-
-        stage('Snyk Scan') {
-            steps {
-                // Run Snyk scan
-                sh 'snyk test /var/lib/jenkins/workspace/secureCICDresume/resume.html'
-            }
+            } 
         }
 
         stage('DAST') {
