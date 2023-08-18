@@ -19,6 +19,13 @@ pipeline {
             }
         }
 
+        stage('Snyk Scan') {
+            steps {
+                // Run Snyk scan
+                sh 'snyk test /var/lib/jenkins/workspace/secureCICDresume/resume.html'
+            }
+        }
+
         stage('DAST') {
             steps {
                 // Run OWASP ZAP DAST scan
